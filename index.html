@@ -5,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track My Pack</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <header>
-        <section class="hero is-info">
-            <div class="hero-body">
+    <header class="hero is-link">
+        <div class="hero-body">
             <p class="title">
                 Track My Pack
             </p>
             <p class="subtitle">
                 Simplifying Package Tracking 
             </p>
-            </div>
-        </section>
+        </div>
     </header>
-    <div class="container">
+    <div class="container" id="searchCon">
         <div class="row" id="inputRow">
             <input class="input is-medium" id="searchInput" type="text" placeholder="Search Tracking">
             <button class="button is-primary" id="searchBtn">Search</button>
@@ -34,15 +34,14 @@
                 <thead>
                     <tr>
                     <th><abbr title="Tracking Number">Tracking Number</abbr></th>
-                    <th><abbr title="Status">Status</abbr></th>
+                    <th><abbr title="Shipping Status">Status</abbr></th>
+                    <th><abbr title="Destination">Dest.</abbr></th>
+                    <th><abbr title="Shipping Date">ShpDate</abbr></th>
                     <th><abbr title="Estimated arrival date">ETA</abbr></th>
-                    <th><abbr title="Drawn">D</abbr></th>
-                    <th><abbr title="Lost">L</abbr></th>
-                    <th><abbr title="Goals for">GF</abbr></th>
-                    <th><abbr title="Goals against">GA</abbr></th>
-                    <th><abbr title="Goal difference">GD</abbr></th>
-                    <th><abbr title="Points">Pts</abbr></th>
-                    <th>Qualification or relegation</th>
+                    <th><abbr title="Actual Delivery Date">DlvDate</abbr></th>
+                    <th><abbr title="Something1">Sm1</abbr></th>
+                    <th><abbr title="Something Else">SE1</abbr></th>
+                    <th>Insert Modal here?</th>
                     </tr>
                 </thead>
                 <thead id="trackingResults">
