@@ -5,12 +5,19 @@
 header {
     text-align: center;
     font-family: 'Merriweather Sans', sans-serif;
+    border-radius: 15px;
 }
 
 #searchCon {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+#searchOptions{
+    margin: 10px 10px 10px 25%;
+
+}
+
 #inputRow {
     margin: 10px 10px 10px 25%;
     width: 75%;
@@ -22,6 +29,6 @@ header {
 }
 
 #resultLayout {
-    margin: 10px 10px 10px 20%;
+    margin: 10px 10px 10px 25%;
 }
 
