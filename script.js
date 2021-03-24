@@ -1,9 +1,6 @@
 var trackList = document.getElementById('searchInput');
 var trackBtn = document.getElementById('searchBtn');
 
-
-
-
 function getNord() {
 
     var apiKey = '2a54e289878ded53f01816a3fddaaa3e';
@@ -15,22 +12,14 @@ function getNord() {
     })
     .then(function (data){
         console.log(data);
-        // // for (var i = 0; i < data.length; i++) {
-        // //     var listItem = document.createElement('li');
-        // //     listItem.textContent = data[i]
-        // }
+        for (var i = 0; i < data.length; i++) {
+            var nordTrackId = document.getElementById('Tracking Number');
+            nordTrackId.textContent = data[i].TrackingInformationResponse.Shipments.Shipment_id;
+            trackList.append(nordTrackId);
+
+        }
     });
-
-
-
-
-
-
-
-
-
-
 
 }
 
-getNord();
+trackBtn.addEventListener('click', getNord);
