@@ -25,8 +25,10 @@ function getNord() {
 var searchBtn = document.querySelector("#searchBtn");
 var searchInput = document.querySelector("#searchInput");
 
+
 var getUrl = function(){
-    var apiUrl = "https://cors-anywhere.herokuapp.com/https://api.trackingmore.com/v2/trackings/china-post/RU123456789CN/en"
+    var apiUrl = "https://cors-anywhere.herokuapp.com/https://api.trackingmore.com/v2/trackings/china-post/"+searchInput.value+"/en"
+    
     fetch(apiUrl, {
         method: "GET",
         headers: {
@@ -45,4 +47,4 @@ searchBtn.addEventListener("click", getUrl);
 
 
 
-getNord();
+//getNord();
