@@ -1,5 +1,4 @@
-var searchList = document.getElementById('searchInput');
-var searchBtn = document.getElementById('searchBtn');
+var upcoming = document.getElementById('matchUps');
 var matchupsLi = document.getElementById('trackingResults')
 
 function getLive() {
@@ -13,17 +12,27 @@ function getLive() {
             "x-rapidapi-host": "odds.p.rapidapi.com"
         }
     };
-    
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
 
-    var matchup = response.data[i].teams
-    var gameTime = response.data[i].commence_time
+    $.ajax(settings).done(function (response) {
+        // console.log(response);
+        showMatchup(response);
+    });
 }
 
-getLive();
+showMatchup = function (data) {
 
+    for (var i = 0; i < 5; i++) {
 
+        matchup = document.createElement("h2");
+        matchup.textContent = data.data[i].teams[0] + " vs " + data.data[i].teams[1];
 
-searchBtn.addEventListener("click", getLive);
+        matchupsLi.appendChild(matchup);
+
+        gameTime = document.createElement("h2");
+        gameTime.textContent = data.data[i].commence_time;
+
+        matchupsLi.appendChild(gameTime);
+    }
+}
+
+upcoming.addEventListener("click", getLive);
