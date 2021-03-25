@@ -23,12 +23,12 @@ showMatchup = function (data) {
 
     for (var i = 0; i < 5; i++) {
 
-        matchup = document.createElement("h1");
+        matchup = document.createElement("h2");
         matchup.textContent = data.data[i].teams[0] + " vs " + data.data[i].teams[1];
 
         matchupsLi.appendChild(matchup);
 
-        gameTime = document.createElement("h1");
+        gameTime = document.createElement("h2");
         gameTime.textContent = data.data[i].commence_time;
 
         matchupsLi.appendChild(gameTime);
