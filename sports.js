@@ -2,6 +2,8 @@ var searchBtn = document.querySelector("#searchBtn");
 var searchInput = document.querySelector("#searchInput");
 var resultsContainer = document.querySelector("#trackingResults");
 
+
+
 var getUrl = function(){
 var settings = {
 	"async": true,
@@ -48,6 +50,30 @@ var showTeam = function(data) {
     teamNickname.textContent = "Team Nickname: " + data.api.teams[0].nickname;
 
     resultsContainer.appendChild(teamNickname);
+}
+
+window.onload = function() {
+    save();
+}
+
+function save() {
+    var input = document.querySelector("#searchInput");
+    var output = document.querySelector("#saveArea");
+    var saveBtn = document.querySelector("#saveBtn");
+
+    saveBtn.addEventListener("click", setSave);
+
+    output.textContent = localStorage.getItem("content");
+    input.value = localStorage.getItem("content");
+
+    console.log(input.value);
+
+    function setSave() {
+        localStorage.setItem("content", input.value);
+        output.textContent = input.value;
+
+        console.log(output.textContent);
+    }
 }
 
 searchBtn.addEventListener("click", getUrl);
