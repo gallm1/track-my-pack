@@ -1,6 +1,8 @@
+// Defined global variables
 var upcoming = document.getElementById('matchUps');
 var matchupsLi = document.getElementById('trackingResults')
 
+// Functions defined
 function getLive() {
     const settings = {
         "async": true,
@@ -14,7 +16,6 @@ function getLive() {
     };
 
     $.ajax(settings).done(function (response) {
-        // console.log(response);
         showMatchup(response);
     });
 }
@@ -29,10 +30,12 @@ showMatchup = function (data) {
         matchupsLi.appendChild(matchup);
 
         gameTime = document.createElement("h2");
-        gameTime.textContent = data.data[i].commence_time;
-
+        gameTime.textContent = moment(data.data[i].commence_time).format("dddd, MMM Do YYYY, h:mm a");
+        
+        
         matchupsLi.appendChild(gameTime);
     }
 }
 
+// Processes called
 upcoming.addEventListener("click", getLive);
